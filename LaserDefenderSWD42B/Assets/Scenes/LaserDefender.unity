@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 152175783}
   - component: {fileID: 152175782}
   m_Layer: 0
-  m_Name: enemyBlue1
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,7 +463,7 @@ GameObject:
   - component: {fileID: 1286049878}
   - component: {fileID: 1286049877}
   m_Layer: 0
-  m_Name: Space-Background-Tiled
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -528,8 +528,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286049876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.139, y: 0.047, z: 5}
-  m_LocalScale: {x: 0.97424525, y: 0.64509284, z: 1}
+  m_LocalPosition: {x: -0.22, y: -0.186, z: 5}
+  m_LocalScale: {x: 0.95925844, y: 0.6277991, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -544,8 +544,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1802572254}
   - component: {fileID: 1802572253}
+  - component: {fileID: 1802572255}
   m_Layer: 0
-  m_Name: playerShip1_orange
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -610,9 +611,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802572252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.96, z: 0}
+  m_LocalPosition: {x: 0, y: -7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1802572255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802572252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1bea9383e8566940ac95cc4198e2e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
