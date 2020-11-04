@@ -8,25 +8,75 @@ using UnityEngine.XR.WSA.Input;
 
 public class Player : MonoBehaviour
 {
-    
     //makes the variable editable from Unity Editor
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 0.7f;
 
+    [SerializeField] GameObject laserPrefab;
+    
+    [SerializeField] float laserFiringSpeed = 0.3f;
+
     float xMin, xMax, yMin, yMax;
+    
+    Coroutine fireCoroutine;
 
     // Start is called before the first frame update
     void Start()
     {
         SetUpMoveBoundaries();
+        StartCoroutine(PrintAndWait());
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
+        Fire();
+
+        
     }
 
+    //coroutine to print 2 messages
+    private IEnumerator PrintAndWait()
+    {
+        print("Message 1");
+        yield return new WaitForSeconds(10);
+        print("Message 2 after 10 seconds");
+    }
+
+    //coroutine to fire continuously
+    private IEnumerator FireContinuously()
+    {
+        while (true) //while coroutine is running
+        {
+            //create an instance of laser
+            //at the ship's position
+            GameObject laser = Instantiate(laserPrefab, transform.position, Quaternion.identity);
+
+            //give a velocity to the laser in y-axis of 15
+            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 15f);
+
+            //wait laserFiringSpeed before firing again
+            yield return new WaitForSeconds(laserFiringSpeed);
+
+        }
+    }
+
+
+    private void Fire()
+    {
+       //if I press fire button
+       if (Input.GetButtonDown("Fire1"))
+        {
+            fireCoroutine = StartCoroutine(FireContinuously());
+        }
+
+       //if I release fire button
+        if (Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(fireCoroutine);
+        }
+    }
 
     private void SetUpMoveBoundaries()
     {
