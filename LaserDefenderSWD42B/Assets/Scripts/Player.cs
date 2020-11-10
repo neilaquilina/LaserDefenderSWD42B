@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject laserPrefab;
     
-    [SerializeField] float laserFiringSpeed = 0.3f;
+    [SerializeField] float laserFiringSpeed = 0.2f;
 
     float xMin, xMax, yMin, yMax;
     
