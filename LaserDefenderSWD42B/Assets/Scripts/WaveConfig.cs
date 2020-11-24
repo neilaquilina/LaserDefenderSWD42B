@@ -10,7 +10,7 @@ public class WaveConfig : ScriptableObject
     //the path on which to move
     [SerializeField] GameObject pathPrefab;
     //time between each spawn
-    [SerializeField] float timeBetweenSpawns = 0.5f;
+    [SerializeField] float timeBetweenSpawns;
     //random time difference between spawns
     [SerializeField] float spawnRandomFactor = 0.3f;
     //number of enemies in Wave
