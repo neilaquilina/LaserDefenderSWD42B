@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4712243029981571498}
   - component: {fileID: 4712243029981571499}
   - component: {fileID: 9058889916711718219}
+  - component: {fileID: 2466249087652781540}
+  - component: {fileID: 7844555086313316621}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -99,5 +101,74 @@ MonoBehaviour:
   - {fileID: 6358972155274122702, guid: 5d287d0a49dbe9343b84581f21b29ce7, type: 3}
   - {fileID: 2281628855065277371, guid: 33ac1dab5b7f2ff4eb244e47a549e40d, type: 3}
   - {fileID: 1474115983952779611, guid: 73a02fa532afa3840a12f329968bbd50, type: 3}
-  enemyMoveSpeed: 2
   waveConfig: {fileID: 11400000, guid: 024b59d2cf346094187152cada3eb9e8, type: 2}
+--- !u!60 &2466249087652781540
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712243029981571496}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.93, y: 0.84}
+    newSize: {x: 0.93, y: 0.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.155, y: -0.12}
+      - {x: 0.155, y: -0.14}
+      - {x: 0.145, y: -0.14999999}
+      - {x: 0.13499999, y: -0.21}
+      - {x: 0.105, y: -0.24}
+      - {x: 0.085, y: -0.38}
+      - {x: 0.145, y: -0.41}
+      - {x: 0.175, y: -0.42}
+      - {x: 0.275, y: -0.42}
+      - {x: 0.33499998, y: -0.29}
+      - {x: 0.465, y: 0.089999996}
+      - {x: 0.465, y: 0.21}
+      - {x: 0.33499998, y: 0.39999998}
+      - {x: 0.325, y: 0.42}
+      - {x: 0.225, y: 0.42}
+      - {x: 0.095, y: 0.38}
+      - {x: 0.074999996, y: 0.34}
+      - {x: -0.21499999, y: 0.42}
+      - {x: -0.33499998, y: 0.42}
+      - {x: -0.465, y: 0.22}
+      - {x: -0.465, y: 0.03}
+      - {x: -0.285, y: -0.42}
+      - {x: -0.16499999, y: -0.42}
+      - {x: -0.13499999, y: -0.41}
+      - {x: -0.074999996, y: -0.38}
+      - {x: 0.125, y: -0.19}
+      - {x: 0.145, y: -0.16}
+--- !u!114 &7844555086313316621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712243029981571496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c19c3bb45758849b04a0cbfd8fe3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  shotCounter: 0
+  minTimeBetweenShots: 0.2
+  maxTimeBetweenShots: 3
+  enemyLaserPrefab: {fileID: 6719496725079054678, guid: c44f8323cae1fd04eb1cde23e0ec492b, type: 3}
+  enemyLaserSpeed: 10
