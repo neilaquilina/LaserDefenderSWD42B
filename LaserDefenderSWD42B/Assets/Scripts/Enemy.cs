@@ -19,13 +19,21 @@ public class Enemy : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
         DamageDealer dmg = otherObject.gameObject.GetComponent<DamageDealer>();
+
+        //if the object does not have a DamageDealer class end the method
+        if (!dmg) //if dmg does not exist
+        {
+            return;
+        }
+
         ProcessHit(dmg);
     }
 
     private void ProcessHit(DamageDealer dmg)
     {
         health -= dmg.GetDamage();
-
+        //destroy Player Laser
+        dmg.Hit();
         if (health <= 0)
         {
             Destroy(gameObject);

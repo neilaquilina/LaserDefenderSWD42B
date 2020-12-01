@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     
     [SerializeField] float laserFiringSpeed = 0.2f;
 
+    [SerializeField] float health = 100;
+
     float xMin, xMax, yMin, yMax;
     
     Coroutine fireCoroutine;
@@ -34,6 +36,32 @@ public class Player : MonoBehaviour
         Fire();
 
         
+    }
+
+    //if Player is hit reduce health
+    private void OnTriggerEnter2D(Collider2D otherObject)
+    {
+        DamageDealer dmg = otherObject.gameObject.GetComponent<DamageDealer>();
+        
+        //if the object does not have a DamageDealer class end the method
+        if(!dmg) //if dmg does not exist
+        {
+            return;
+        }
+
+        ProcessHit(dmg);
+    }
+
+    private void ProcessHit(DamageDealer dmg)
+    {
+        health -= dmg.GetDamage();
+        //destroy EnemyLaser
+        dmg.Hit();
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     //coroutine to print 2 messages
