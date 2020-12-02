@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject enemyLaserPrefab;
     [SerializeField] float enemyLaserSpeed = 10f;
 
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float explosionDuration;
+
     //reduce Enemy health everytime an enemy collides with a gameObject
     //which has a DamageDealer component
     private void OnTriggerEnter2D(Collider2D otherObject)
@@ -36,8 +39,19 @@ public class Enemy : MonoBehaviour
         dmg.Hit();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    //when Enemy dies
+    private void Die()
+    {
+        Destroy(gameObject);
+        //create an Explosion Particle
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+        //destroy explosion after explosionDuration
+        Destroy(explosion, explosionDuration);
+
     }
 
     // Start is called before the first frame update
