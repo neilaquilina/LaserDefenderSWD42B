@@ -160,3 +160,7 @@ MonoBehaviour:
   enemyLaserSpeed: 10
   deathVFX: {fileID: 5944685038423065445, guid: e29a2c22201c35b4cb7befa05c0146d5, type: 3}
   explosionDuration: 1
+  enemyDeathSound: {fileID: 8300000, guid: 1053b5459f5b3f8459b1c5d18c15f4a0, type: 3}
+  enemyDeathSoundVolume: 0.75
+  enemyShootSound: {fileID: 8300000, guid: dfa338005f1a31c4a9509c83f12b3241, type: 3}
+  enemyShootSoundVolume: 0.2

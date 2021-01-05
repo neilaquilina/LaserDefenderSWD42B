@@ -100,7 +100,11 @@ MonoBehaviour:
   padding: 0.7
   laserPrefab: {fileID: 3670975924557444790, guid: 8f0daa810a9eecc4789b506a6b9a3128, type: 3}
   laserFiringSpeed: 0.15
-  health: 100
+  health: 500
+  playerDeathSound: {fileID: 8300000, guid: 351ee6ffaba4d35438bc1743c03bed52, type: 3}
+  playerDeathSoundVolume: 0.75
+  playerShootSound: {fileID: 8300000, guid: 57e0ea6cbbefd8442a6a0c9c70f2b038, type: 3}
+  playerShootSoundVolume: 0.2
 --- !u!60 &4171568552375251346
 PolygonCollider2D:
   m_ObjectHideFlags: 0

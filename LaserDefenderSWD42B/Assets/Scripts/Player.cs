@@ -18,6 +18,12 @@ public class Player : MonoBehaviour
 
     [SerializeField] float health = 100;
 
+    [SerializeField] AudioClip playerDeathSound;
+    [SerializeField] [Range(0, 1)] float playerDeathSoundVolume = 0.75f;
+
+    [SerializeField] AudioClip playerShootSound;
+    [SerializeField] [Range(0, 1)] float playerShootSoundVolume = 0.2f;
+
     float xMin, xMax, yMin, yMax;
     
     Coroutine fireCoroutine;
@@ -60,8 +66,16 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        //play enemyDeathSound at Camera position, at enemyDeathSoundVolume
+        AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
+
     }
 
     //coroutine to print 2 messages
@@ -83,6 +97,9 @@ public class Player : MonoBehaviour
 
             //give a velocity to the laser in y-axis of 15
             laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 15f);
+
+            //play playerShootSound at Camera position, with playerShootSoundVolume
+            AudioSource.PlayClipAtPoint(playerShootSound, Camera.main.transform.position, playerShootSoundVolume);
 
             //wait laserFiringSpeed before firing again
             yield return new WaitForSeconds(laserFiringSpeed);
