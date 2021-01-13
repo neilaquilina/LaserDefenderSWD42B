@@ -76,6 +76,10 @@ public class Player : MonoBehaviour
         //play enemyDeathSound at Camera position, at enemyDeathSoundVolume
         AudioSource.PlayClipAtPoint(playerDeathSound, Camera.main.transform.position, playerDeathSoundVolume);
 
+        //find the object Level from the hierarchy and run its method
+        //LoadGameOver()
+        FindObjectOfType<Level>().LoadGameOver();
+
     }
 
     //coroutine to print 2 messages

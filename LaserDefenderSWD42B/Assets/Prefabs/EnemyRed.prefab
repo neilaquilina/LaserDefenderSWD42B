@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 225960354287541878}
   - component: {fileID: 2585910675791976414}
   - component: {fileID: -5339495192428589107}
+  - component: {fileID: -5661087514470876794}
+  - component: {fileID: -8332377380965651202}
   m_Layer: 9
   m_Name: EnemyRed
   m_TagString: Untagged
@@ -109,7 +111,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -159,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  scoreValue: 40
   shotCounter: 0
   minTimeBetweenShots: 0.2
   maxTimeBetweenShots: 3
@@ -170,3 +173,37 @@ MonoBehaviour:
   enemyDeathSoundVolume: 0.75
   enemyShootSound: {fileID: 8300000, guid: dfa338005f1a31c4a9509c83f12b3241, type: 3}
   enemyShootSoundVolume: 0.2
+--- !u!50 &-5661087514470876794
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967589381161889081}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &-8332377380965651202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8967589381161889081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 167ab3326a79a0740ab945c516c410a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 200

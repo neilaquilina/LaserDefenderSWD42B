@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
 
     [SerializeField] float health = 200;
+    [SerializeField] int scoreValue;
 
     [SerializeField] float shotCounter;
     [SerializeField] float minTimeBetweenShots = 0.2f;
@@ -30,7 +31,12 @@ public class Enemy : MonoBehaviour
         DamageDealer dmg = otherObject.gameObject.GetComponent<DamageDealer>();
 
         //if the object does not have a DamageDealer class end the method
-        if (!dmg) //if dmg does not exist
+        if (!dmg && otherObject.gameObject.tag == "player") //if dmg does not exist
+        {
+            Die();
+            return;
+        }
+        else if (!dmg)
         {
             return;
         }
@@ -52,6 +58,8 @@ public class Enemy : MonoBehaviour
     //when Enemy dies
     private void Die()
     {
+        //add scoreValue to GameSession score
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
         Destroy(gameObject);
         //create an Explosion Particle
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
@@ -59,6 +67,7 @@ public class Enemy : MonoBehaviour
         Destroy(explosion, explosionDuration);
         //play enemyDeathSound at Camera position, at enemyDeathSoundVolume
         AudioSource.PlayClipAtPoint(enemyDeathSound, Camera.main.transform.position, enemyDeathSoundVolume);
+        
 
     }
 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!28 &-2666443051797216436
+--- !u!28 &-2468830628092752210
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: batmfa__ SDF
   m_EditorClassIdentifier: 
   hashCode: -362101492
-  material: {fileID: 1523017022061687814}
+  material: {fileID: 1618515685964933538}
   materialHashCode: -875846612
   m_Version: 1.1.0
   m_SourceFontFileGUID: e0b465806e4af554f9bfb3986d0fc8ac
@@ -1816,7 +1816,7 @@ MonoBehaviour:
     m_GlyphIndex: 113
     m_Scale: 1
   m_AtlasTextures:
-  - {fileID: -2666443051797216436}
+  - {fileID: -2468830628092752210}
   m_AtlasTextureIndex: 0
   m_IsMultiAtlasTexturesEnabled: 0
   m_UsedGlyphRects:
@@ -2508,7 +2508,7 @@ MonoBehaviour:
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
---- !u!21 &1523017022061687814
+--- !u!21 &1618515685964933538
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -2540,7 +2540,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: -2666443051797216436}
+        m_Texture: {fileID: -2468830628092752210}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:

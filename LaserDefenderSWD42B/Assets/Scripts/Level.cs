@@ -5,14 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
+
+    [SerializeField] float delayInSeconds = 3f;
+
+    IEnumerator WaitAndLoad()
+    {
+        yield return new WaitForSeconds(delayInSeconds);
+        SceneManager.LoadScene("GameOver");
+    }
+
     public void LoadGame()
     {
         SceneManager.LoadScene("LaserDefender");
+        
     }
 
     public void LoadGameOver()
     {
-        SceneManager.LoadScene("GameOver");
+        StartCoroutine(WaitAndLoad());
     }
 
     public void LoadStartMenu()
@@ -22,6 +32,7 @@ public class Level : MonoBehaviour
 
     public void QuitGame()
     {
+        print("Quitting");
         //works only when running EXE game
         Application.Quit();
     }
